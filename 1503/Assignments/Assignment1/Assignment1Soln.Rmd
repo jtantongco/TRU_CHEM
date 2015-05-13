@@ -1,0 +1,90 @@
+---
+title: "TRU_CHEM1523_Assn1"
+author: "Jeremiah Tantongco"
+date: "@todo - fix date"
+output: html_document
+---
+
+###1 
+In two or three lines, distinguish between the following pairs of terms. 
+Give examples where appropriate.
+
+a. 
+A SI base unit is measurable quality is fundamentally different from properties.
+Ex. Celsius for temperature, and meters for length
+A SI derived unit is measurable quality is either dimensionless or a unit made through some combination of base units
+Ex. speed in meters per second, frequency in hertz
+
+b. 
+The atomic number is the # of protons present in the nucleus of the atom.
+Atomic weight is roughly the # protons and neutrons. It is standardized to Carbon element.
+
+c. # Assume Arrehnius acid is meant
+Acids are substances that create excess hydronium ions ($H _3 O^+$).
+Substances are substances that create excess hydroxide ions ($OH^-$).
+
+d.
+Precision is the degree of exactness a measureant has.
+Roughly, this is correlated with the number of significant digits attached to measurement.
+
+Accuracy is the degree of correctness a measurement has.
+
+Ex. 
+If x = 25, then: 
+x=25.00000000 is both accurate and precise
+x=1.555555555 is precise but not accurate
+x=24.5 is accurate but not precise 
+
+###2.  
+
+Part A.  
+i. Arsenic (III) Trisulphide  
+ii. Aluminum dichromate  
+iii. Manganese (II) Bromite  
+iv. Nitrous oxide (Dinitrogen monoxide)  
+v. Titanium (IV) Carbonate  
+vi. Phosphorous Triiodide  
+vii. Nickel (II) hydrogen carbonate  
+viii. Copper (III) Suplhate  
+
+Part B.  
+i. $Cl_2 O_5$  
+ii. $Co(MnO_4)_2$  
+iii. $Ca(OH)_2$  
+iv. $SO_3$  
+v. $Cr(C_2H_3O_2)_3$  
+vi. $IO_7$  
+vii. $HNO_2$  
+viii. $Pb_3N_2$  
+
+###3.
+``` {r defn}
+mole <- 6.022e23
+atomicWeight <- 3.04e8
+density <- 1.10 #g/cm^3
+volumeDNAmolecule <- atomicWeight * mole^-1 * (density)^-1
+```
+The volume of a DNA molecule is `r format(volumeDNAmolecule, digits =3)`$cm^3$
+
+###4.
+49.02
+
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+summary(cars)
+format(Sys.time(), "%a %b %d %X %Y")
+```
+
+You can also embed plots, for example:
+
+The current date is `r format(Sys.time(), "%a %b %d %X %Y")`
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
