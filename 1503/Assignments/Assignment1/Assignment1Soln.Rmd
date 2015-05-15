@@ -1,11 +1,11 @@
 ---
 title: "TRU_CHEM1523_Assn1"
 author: "Jeremiah Tantongco"
-date: "@todo - fix date"
-output: html_document
+date: $\today$
+output: pdf_document
 ---
 
-###1 
+###1.  
 In two or three lines, distinguish between the following pairs of terms. 
 Give examples where appropriate.
 
@@ -26,7 +26,6 @@ Substances are substances that create excess hydroxide ions ($OH^-$).
 d.
 Precision is the degree of exactness a measureant has.
 Roughly, this is correlated with the number of significant digits attached to measurement.
-
 Accuracy is the degree of correctness a measurement has.
 
 Ex. 
@@ -67,7 +66,43 @@ volumeDNAmolecule <- atomicWeight * mole^-1 * (density)^-1
 The volume of a DNA molecule is `r format(volumeDNAmolecule, digits =3)`$cm^3$
 
 ###4.
-49.02
+```{r Q4}
+percentC <- 49.02
+percentH <- 2.743
+percentCl <- 48.24
+listPercent <- c(percentC,percentH,percentCl)
+listWeight <- c(12,1,35.5)
+listMols <- listPercent / listWeight
+empiricalFormula <- listMols / min(listMols)
+```
+
+a.
+The empirical formula is C$_`r round(empiricalFormula[1])`$ H$_`r round(empiricalFormula[2])`$ Cl$_`r round(empiricalFormula[3])`$
+
+b.
+``` {r Q4b}
+EmpiricalWeight <- listWeight %*% empiricalFormula
+ActualMolarWeight <- 147.0 #g/mol
+MolecularFormulaCoeff <- ActualMolarWeight/EmpiricalWeight
+MolecularFormula <- MolecularFormulaCoeff*empiricalFormula
+```
+
+The empirical formula is C$_`r round(MolecularFormula[1])`$ H$_`r round(MolecularFormula[2])`$ Cl$_`r round(MolecularFormula[3])`$
+
+###5.
+a. $PbS + 2 PbO -> 3 Pb_{(s)} + SO_2$   
+b. $14.0g* \frac{1 mol}{223g} * \frac{3 mol Pb}{2 mol PbO}$ = `r format(14.0/223*3/2, digits=3)` mol $Pb_{(s)}$
+c.  $14.0g* \frac{1 mol}{223g} * \frac{1 mol SO_2}{2 mol PbO} * \frac{64.1 g SO_2}{1 mol SO_2}$ = `r format(14.0/223*1/2*64.1, digits=3)` g $SO_2$ 
+
+
+###6. 
+
+###7.
+
+###8.
+
+###9.
+###10.
 
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
